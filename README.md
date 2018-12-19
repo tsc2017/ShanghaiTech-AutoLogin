@@ -16,3 +16,4 @@ Tested on Windows 10.
 - Replace "admin" with your Windows user name on the second line in `login.bat`, make sure you have a valid path to `pythonw.exe`.
 - Create a shortcut of `login.bat`
 - Copy the shortcut to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp`
+- Reboot. Press `CTRL + SHIFT + ESC` to launch Task Manager. You will see that python is running in the background and is not taking up much resources.

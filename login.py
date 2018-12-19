@@ -14,41 +14,42 @@ import time
 username = ''
 password = ''
 #======================================================
-#语言
+#语言 language
 lang = 'ZH'
+#lang = 'EN'
 #======================================================
 
 print('')
 if lang == 'ZH':
-	print(u'上海科技大学 校园网络自动登录助手')
-	print(u'开发:上海科技大学 信息科学与技术学院 吕文涛')
-	print(u'开发版本，严禁外传')
+	print('上海科技大学 校园网络自动登录助手')
+	print('开发:上海科技大学 信息科学与技术学院 吕文涛')
+	print('开发版本，严禁外传')
 else:
-	print(u'ShanghaiTech EZNetLoginer')
-	print(u'Developer : eastpiger (Lv Wentao) , SIST , ShanghaiTech University')
-	print(u'Under development')
+	print('ShanghaiTech EZNetLoginer')
+	print('Developer : eastpiger (Lv Wentao) , SIST , ShanghaiTech University')
+	print('Under development')
 while True:	
-	print(u'========================================')
+	print('========================================')
 	httpClient = None
 	try:
 		if username == '':
 			if lang == 'ZH':
-				print(u'请输入登录账号：',end="")
+				print('请输入登录账号：', end="")
 			else:
-				print(u'Username:',end="")
+				print('Username:', end="")
 			username = input('')
 		if password == '':
 			if lang == 'ZH':
-				print(u'请输入登录密码（密码并不会在此处显示，请直接输入即可）：',end="")
+				print('请输入登录密码（密码并不会在此处显示，请直接输入即可）：',end="")
 			else:
-				print(u'Password:',end="")
+				print('Password:',end="")
 			password = getpass.getpass('')
 		print('')
 		if lang == 'ZH':
-			print(u'读取到账号。')
+			print('读取到账号。')
 		else:
-			print(u'account got.')
-		print(u'========================================')
+			print('account got.')
+		print('========================================')
 
 		while True:
 			#======================================================
@@ -62,16 +63,16 @@ while True:
 			#======================================================
 
 			if lang == 'ZH':
-				print(u'正在登录……',end="")
+				print('正在登录……',end="")
 			else:
-				print(u'Logining……',end="")
+				print('Logining……',end="")
 			httpClient.request('POST', '/PortalServer/Webauth/webAuthAction!login.action', params, headers)
 			response = httpClient.getresponse()
 			if response.status != 200:
 				if lang == 'ZH':
-					print(u'连接失败！请确认网络已经连接')
+					print('连接失败！请确认网络已经连接')
 				else:
-					print(u'Connection Failed! Is the network available?')
+					print('Connection Failed! Is the network available?')
 				connect()
 				exit()
 			else:
@@ -80,28 +81,28 @@ while True:
 				response_data_json = json.loads(response_data)
 				if response_data_json['success'] != True:
 					if lang == 'ZH':
-						print(u'登录失败！请确认账号可用')
+						print('登录失败！请确认账号可用')
 					else:
-						print(u'Login Failed! Is your account available?')
+						print('Login Failed! Is your account available?')
 					exit()
 				else:
 					if lang == 'ZH':
-						print(u'成功！')
-						print(u'登录账号：' + response_data_json['data']['account'])
-						print(u'内网ip：' + response_data_json['data']['ip'])
+						print('成功！')
+						print('登录账号：' + response_data_json['data']['account'])
+						print('内网ip：' + response_data_json['data']['ip'])
 					else:
-						print(u'Success!')
-						print(u'Username:' + response_data_json['data']['account'])
-						print(u'ClientIP:' + response_data_json['data']['ip'])
+						print('Success!')
+						print('Username:' + response_data_json['data']['account'])
+						print('ClientIP:' + response_data_json['data']['ip'])
 
 			time.sleep(1)
-			print(u'========================================')
+			print('========================================')
 		
 	except Exception as e:
 		if lang == 'ZH':
-			print(u'未知错误，请确认网络已经连接')
+			print('未知错误，请确认网络已经连接')
 		else:
-			print(u'Unknown Error! Is the network available?')
+			print('Unknown Error! Is the network available?')
 		print(e)
 	finally:
 		if httpClient:

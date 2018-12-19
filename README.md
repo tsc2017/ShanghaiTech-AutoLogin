@@ -11,9 +11,10 @@ Tested on Windows 10.
 - Install [Python](https://www.python.org/downloads/)
 - Edit `login.py`, fill in your user name and password
 - Run `login.py`.
-## Auto-start in the background (Windows)
-- Put `login.py` and `login.bat` in the same directory/folder
-- Replace "admin" with your Windows user name on the second line in `login.bat`, make sure you have a valid path to `pythonw.exe`.
-- Create a shortcut of `login.bat`
-- Copy the shortcut to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp`
-- Reboot. Press `CTRL + SHIFT + ESC` to launch Task Manager. You will see that python is running in the background and is not taking up much resources.
+## Auto-start in the background 
+- Windows
+  - Put `login.py` and `login.bat` in the same directory/folder
+  - Replace "admin" with your Windows user name on the second line in `login.bat`, make sure you have a valid path to `pythonw.exe`.
+  - Create a shortcut of `login.bat`
+  - Copy the shortcut to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp`
+  - Reboot. Press <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>ESC</kbd> to launch Task Manager. You will see that python is running in the  background and is not taking up much resources.

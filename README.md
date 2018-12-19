@@ -17,7 +17,7 @@ Tested on Windows 10 and Ubuntu 18.04.
   - Replace "admin" with your Windows user name on the second line in `login.bat`, make sure you have a valid path to `pythonw.exe`
   - Create a shortcut of `login.bat`
   - Copy the shortcut to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp`
-  - Reboot. Press <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>ESC</kbd> to launch Task Manager. You will see that Python is running in the background and is not taking up much system resource.
+  - Reboot. Press <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>ESC</kbd> to launch Task Manager. You will see that Python is running in the background and is not taking up much system resource.
 
 - Linux
   - Append the following line to `/etc/rc.local` before `exit 0` (You will need to [configure](https://www.centos.bz/2018/05/ubuntu-18-04-rc-local-systemd%E8%AE%BE%E7%BD%AE/) `rc.local` first if you are using Ubuntu 18.04):
